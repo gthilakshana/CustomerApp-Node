@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .custom-table {
+            background-color: #2d3436; 
+            color: white; 
+        }
+
+        .custom-table thead th {
+            background-color: #2d3436; 
+            color: white; 
+        }
+
+      
+
+        .custom-table td,
+        .custom-table th {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .custom-btn-update {
+            background-color: #ff9f1a;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .custom-btn-update:hover {
+            background-color: #ffaf40;
+        }
+
+        .custom-btn-show {
+            background-color: #e84393;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .custom-btn-show:hover {
+            background-color: #fd79a8;
+        }
+
+        .custom-btn-delete {
+            background-color: #6c5ce7;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .custom-btn-delete:hover {
+            background-color: #a29bfe;
+        }
+    </style>
+</head>
+
+<body>
+    <br>
+    <div class="container">
+        <div class="row">
+            <table class="table table-hover custom-table">
+                <thead>
+                    <tr>
+                        <th>Nic</th>
+                        <th>Name</th>
+                        <th>Address</th>
+                        <th>Salary</th>
+                        <th>Options</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each rows}}
+                    <tr>
+                        <td>{{this.nic}}</td>
+                        <td>{{this.name}}</td>
+                        <td>{{this.address}}</td>
+                        <td>{{this.salary}}</td>
+                        <td>
+                            <a href="#" class="btn custom-btn-show">Show Data</a>&nbsp;
+                            <a href="/delete-customer/{{this.nic}}" class="btn custom-btn-delete">Delete Data</a>&nbsp;
+                            <a href="/update-customer-form/{{this.nic}}" class="btn custom-btn-update">Update Data</a>&nbsp;
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>
